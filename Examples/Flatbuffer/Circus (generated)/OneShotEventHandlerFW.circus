@@ -148,12 +148,21 @@ DeadlineClock \circdef \\
 			\extchoice \\
 			\circblockopen
 	 			deschedule\_handler~.~schedulable \then \\
+<<<<<<< HEAD
+				DeadlineClock 
+			)
+		)
+	)	
+    \circseq%%\circinterrupt 
+    (
+=======
 				DeadlineClock
 			\circblockclose
 		\circblockclose
 	\circblockclose
 	\circseq %%%%PARSING%%%%  \circinterrupt
     \circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
     		end\_releases~.~schedulable \then \\
 	    	\Skip
     \circblockclose
@@ -168,10 +177,17 @@ Scheduled \circdef \\
     release~.~schedulable \then \\
 		handleAsyncEventCall~.~schedulable \then \\
 	 	NotScheduled
+<<<<<<< HEAD
+     )\\ 
+   \\ \circseq %%\circinterrupt \\
+  (  
+     	( 
+=======
      \circblockclose \\
      \circseq  %%%%%PARSING%%%% \circinterrupt \\
   \circblockopen
      	\circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
       		deschedule\_handler~.~schedulable \then \\
       		NotScheduled\\
       	\circblockclose \\

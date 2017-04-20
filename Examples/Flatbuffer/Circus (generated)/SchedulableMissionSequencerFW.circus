@@ -48,12 +48,20 @@ Start ~ \circdef ~ \\
 \t1 \circblockopen
 		done\_toplevel\_sequencer \then \\
 		applicationTerminating := \true \\
+<<<<<<< HEAD
+	)
+=======
 	\circblockclose \\
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 \t1 \extchoice\\
 \t1 \circblockopen
 		activate\_schedulables~?~someMissionID \then \\
 		Start \\
+<<<<<<< HEAD
+	)
+=======
 	\circblockclose
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 \end{circusaction}
 %
 \begin{circusaction}
@@ -70,16 +78,26 @@ Activate \circdef\\
 %
 \begin{circusaction}
 Execute \circdef \\
+<<<<<<< HEAD
+\t1  (
+	(
+    		(
+=======
 \t1  \circblockopen
 	\circblockopen
     		\circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
       			RunMission \circseq\\
       			end\_methods~.~sequencer \then \\
       			\Skip\\
    		 \circblockclose \\
       	\lpar\{ currentMission \} | \lchanset end\_methods \rchanset | \emptyset \rpar\\
    	 Methods\\
+<<<<<<< HEAD
+    )
+=======
     \circblockclose   \\
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
    	 \lpar \emptyset | CCSync | \{ continueAbove, continueBelow \} \rpar\\
     	 ContinueController \\
   \circblockclose  \circseq \\
@@ -106,10 +124,17 @@ StartMission ~ \circdef ~\\
 \t2   \circblockopen
      	start\_mission~.~currentMission~.~sequencer \then\\
      	initializeRet~.~currentMission \then \\
+<<<<<<< HEAD
+     	(
+     		SignalTermination\\
+     		\t1 \lpar \emptyset | \lchanset end\_terminations \rchanset | \emptyset \rpar\\
+     		(
+=======
      	\circblockopen
      		SignalTermination\\
      		\t1 \lpar \emptyset | \lchanset end\_terminations \rchanset | \emptyset \rpar\\
      		\circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 	    			done\_mission~.~currentMission~?~continueReturn \then \\
 	    			set\_continueBelow~.~sequencer~!~continueReturn \then \\
 	    			end\_terminations~.~sequencer \then \\
@@ -121,8 +146,13 @@ StartMission ~ \circdef ~\\
 \t2   \circblockopen
 	set\_continueBelow~.~sequencer~!~\false \then \\
     	\Skip \\
+<<<<<<< HEAD
+      )
+\t1  \circfi\\
+=======
       \circblockclose \\
 \t1  \circfi
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 \end{circusaction}
 %
 \begin{circusaction}
@@ -140,13 +170,22 @@ Continue \circdef \\
 %
 \begin{circusaction}
 SignalTermination ~ \circdef ~\\
+<<<<<<< HEAD
+(
+    (
+=======
 \t1 \circblockopen
     \circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
     	end\_terminations~.~sequencer \then \\
     	\Skip
     \circblockclose \\
     \extchoice\\
+<<<<<<< HEAD
+    (
+=======
     \circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
       signalTerminationCall~.~sequencer \then \\
       set\_continueAbove~.~sequencer~!~\false \then \\
       requestTerminationCall~.~currentMission~.~sequencer \then\\
@@ -166,7 +205,11 @@ Methods ~ \circdef \\
     		Methods\\
     \circblockclose \\
 \t1  \extchoice \\
+<<<<<<< HEAD
+\t1	(
+=======
 \t1	\circblockopen
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 	   end\_methods~.~sequencer \then \\
 	   \Skip\\
 	\circblockclose
@@ -175,7 +218,12 @@ Methods ~ \circdef \\
 \begin{circusaction}
 SequenceTerminationPending ~ \circdef \\
 \t1	sequenceTerminationPendingCall~.~sequencer \then \\
+<<<<<<< HEAD
+\t1	get\_continue~.~sequencer~?~continue \then
+
+=======
 \t1	get\_continue~.~sequencer~?~continue \then \\
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 \t1 	 sequenceTerminationPendingRet~.~sequencer~!~continue \then\\
 \t1	  \Skip
 \end{circusaction}
@@ -221,6 +269,14 @@ Finish ~ \circdef ~\\
 \end{circusaction}
 %
 \begin{circusaction}
+<<<<<<< HEAD
+  \circspot (\circmu X \circspot \lschexpract Init \rschexpract \circseq Start \circseq\\
+  	(\circif applicationTerminating = \false \circthen \\
+  	 \t2 (Execute \circseq Cleanup \circseq X)\\
+  	 \circelse applicationTerminating = \true \circthen \\
+  	 \t2 \Skip\\
+  	 \circfi))
+=======
 	\circspot \circblockopen\circmu X \circspot \lschexpract SMS\_Init \rschexpract \circseq Start \circseq\\
   	\circblockopen \circif applicationTerminating = \false \circthen \\
   	 \t2 \circblockopen Execute \circseq Cleanup \circseq X\circblockclose \\
@@ -230,6 +286,7 @@ Finish ~ \circdef ~\\
   	 	 \Skip
   	  \circblockclose \\
   	 \circfi \circblockclose \circblockclose
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 \end{circusaction}
 %
 \begin{circus}

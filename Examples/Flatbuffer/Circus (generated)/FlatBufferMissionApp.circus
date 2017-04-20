@@ -1,10 +1,15 @@
 \begin{zsection}
   \SECTION ~ FlatBufferMissionApp ~ \parents ~ scj\_prelude, MissionId, MissionIds, \\
   \t1 SchedulableId, SchedulableIds, MissionChan, SchedulableMethChan, FlatBufferMissionMethChan \\
+<<<<<<< HEAD
+ , FlatBufferMissionClass, MethodCallBindingChannels 
+ 
+=======
  %%%%PARSING%%%, FlatBufferMissionClass
  , MethodCallBindingChannels 
  , ObjectFWChan, ObjectIds
 
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
 \end{zsection}
 
 
@@ -98,8 +103,12 @@ startSyncMeth~.~FlatBufferMissionOID~.~thread \then \\
 lockAcquired~.~FlatBufferMissionOID~.~thread \then \\
 
       \circblockopen
+<<<<<<< HEAD
+            \circmu X \circspot \\ \circblockopen \circvar loopVar : \boolean \circspot loopVar :=~(\lnot bufferEmpty() )\circseq \\ \circif ~ (loopVar = \true) ~ \circthen \\ \t1 \Skip \circseq X \\ \circelse ~ (loopVar = \false) \circthen \Skip \\ \circfi \circblockclose \\
+=======
       \circmu X \circspot \\ \circblockopen \circvar loopVar : \boolean \circspot loopVar :=~(\lnot \false %%%%PARSING%%%bufferEmpty() 
             	    )\circseq \\ \circif ~ (loopVar = \true) ~ \circthen \\ \t1 \Skip \circseq X \\ \circelse ~ (loopVar = \false) \circthen \Skip \\ \circfi \circblockclose \\
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
             
 
 
@@ -127,13 +136,21 @@ startSyncMeth~.~FlatBufferMissionOID~.~thread \then \\
 lockAcquired~.~FlatBufferMissionOID~.~thread \then \\
 
       \circblockopen
+<<<<<<< HEAD
+            \circmu X \circspot \\ \circblockopen \circvar loopVar : \boolean \circspot loopVar :=~bufferEmpty()\circseq \\ \circif ~ (loopVar = \true) ~ \circthen \\ \t1 \Skip \circseq X \\ \circelse ~ (loopVar = \false) \circthen \Skip \\ \circfi \circblockclose \\
+=======
       \circmu X \circspot \\ \circblockopen \circvar loopVar : \boolean \circspot loopVar := \false %%%%PARSING%%%~bufferEmpty()
             \circseq \\ \circif ~ (loopVar = \true) ~ \circthen \\ \t1 \Skip \circseq X \\ \circelse ~ (loopVar = \false) \circthen \Skip \\ \circfi \circblockclose \\
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
              \circseq \\ 
 
 
 
+<<<<<<< HEAD
+            \circvar out : \num \circspot out := this~.~buffer
+=======
             \circvar out : \num \circspot out := 0%%%%PARSING%%%this~.~buffer
+>>>>>>> c6b8ab0598fdb7731c2f2dd18a7774c139201c53
              \circseq \\ 
 
 
